@@ -56,11 +56,10 @@
     <Grid>
 
         <!-- SplitView -->
-        <SplitView x:Name="MySplitView"
+        <SplitView x:Name="ShellSplitView"
                    IsPaneOpen="False"
                    CompactPaneLength="48"
                    OpenPaneLength="200"
-                   PaneBackground="{StaticResource SplitViewBackgroundBrush}"
                    DisplayMode="Overlay"
                    FontFamily="Segoe UI">
             <SplitView.Pane>
@@ -69,7 +68,6 @@
                       HorizontalAlignment="Stretch"
                       ManipulationMode="TranslateX"
                       ManipulationCompleted="SplitViewPane_ManipulationCompleted"
-                      Background="{StaticResource SplitViewBackgroundBrush}"
                       Padding="0 32 0 0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -95,6 +93,10 @@
             </SplitView.Pane>
             <SplitView.Content>
                 <Grid Background="{StaticResource PageBackgroundBrush}">
+                    <Image Source="ms-appx:///Assets/background.jpg"
+                           Stretch="Fill"
+                           Opacity=".25" />
+
                     <!-- Navigation Frame -->
                     <Frame x:Name="SplitViewFrame"
                            Navigated="SplitViewFrame_OnNavigated"
@@ -156,10 +158,12 @@
                     <VisualState.Setters>
                         <!-- SplitView pane shows as overlay -->
                         <!-- Splitview pane will close however :-( -->
-                        <Setter Target="MySplitView.DisplayMode"
+                        <Setter Target="ShellSplitView.DisplayMode"
                                 Value="Inline" />
-                        <Setter Target="MySplitView.IsPaneOpen"
+                        <Setter Target="ShellSplitView.IsPaneOpen"
                                 Value="True" />
+                        <Setter Target="ShellSplitView.PaneBackground"
+                                Value="{StaticResource SplitViewInlineBackgroundBrush}" />
                     </VisualState.Setters>
                 </VisualState>
 
@@ -169,10 +173,12 @@
                         <AdaptiveTrigger MinWindowWidth="641" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="MySplitView.DisplayMode"
+                        <Setter Target="ShellSplitView.DisplayMode"
                                 Value="CompactOverlay" />
-                        <Setter Target="MySplitView.IsPaneOpen"
+                        <Setter Target="ShellSplitView.IsPaneOpen"
                                 Value="False" />
+                        <Setter Target="ShellSplitView.PaneBackground"
+                                Value="{StaticResource SplitViewOverlayBackgroundBrush}" />
                     </VisualState.Setters>
                 </VisualState>
 
@@ -183,10 +189,12 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <!-- Collapse the SplitView pane into overlay mode -->
-                        <Setter Target="MySplitView.DisplayMode"
+                        <Setter Target="ShellSplitView.DisplayMode"
                                 Value="Overlay" />
-                        <Setter Target="MySplitView.IsPaneOpen"
+                        <Setter Target="ShellSplitView.IsPaneOpen"
                                 Value="False" />
+                        <Setter Target="ShellSplitView.PaneBackground"
+                                Value="{StaticResource SplitViewOverlayBackgroundBrush}" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>

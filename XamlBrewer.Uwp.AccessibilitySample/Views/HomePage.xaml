@@ -9,7 +9,7 @@
       Foreground="{StaticResource PageForegroundBrush}"
       FontFamily="Segoe UI">
 
-    <Grid Background="{StaticResource PageBackgroundBrush}"
+    <Grid Background="Transparent"
           Padding="48 34 0 0">
         <Grid.RowDefinitions>
             <RowDefinition Height="74" />

@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.17134.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -96,11 +96,15 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ControlHelpers.Composition.cs" />
-    <Compile Include="Controls\RadialGauge\RadialGauge.Accessibility.cs" />
+    <Compile Include="Controls\RadialGauge\RadialGauge.Accessibility.cs">
+      <DependentUpon>RadialGauge.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\RadialGauge\RadialGauge.cs">
       <DependentUpon>RadialGauge.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\RadialGauge\RadialGauge.AutomationPeer.cs" />
+    <Compile Include="Controls\RadialGauge\RadialGauge.AutomationPeer.cs">
+      <DependentUpon>RadialGauge.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Mvvm\DelegateCommand.cs" />
     <Compile Include="Services\Activation\Activation.cs" />
     <Compile Include="Services\Activation\ActivationExtensions.cs" />
@@ -129,6 +133,7 @@
     <None Include="XamlBrewer.Uwp.AccessibilitySample_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Background.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

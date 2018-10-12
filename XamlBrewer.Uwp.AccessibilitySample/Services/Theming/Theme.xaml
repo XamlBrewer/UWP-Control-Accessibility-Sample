@@ -32,10 +32,16 @@
                      Color="#FF77878b" />
 
     <!-- Splitview Pane -->
-    <SolidColorBrush x:Key="SplitViewBackgroundBrush"
-                     Color="DarkSlateGray" />
+    <AcrylicBrush x:Key="SplitViewInlineBackgroundBrush"
+                  BackgroundSource="HostBackdrop"
+                  TintOpacity="0.6"
+                  FallbackColor="DarkSlateGray" />
+    <AcrylicBrush x:Key="SplitViewOverlayBackgroundBrush"
+                  BackgroundSource="Backdrop"
+                  TintOpacity="0.6"
+                  FallbackColor="DarkSlateGray" />
     <SolidColorBrush x:Key="SplitViewForegroundBrush"
-                     Color="Thistle" />
+                     Color="Indigo" />
     <SolidColorBrush x:Key="HamburgerForegroundBrush"
                      Color="Coral" />
 
@@ -44,7 +50,7 @@
     <SolidColorBrush x:Key="PageBackgroundBrush"
                      Color="DimGray" />
     <SolidColorBrush x:Key="PageTitleBrush"
-                     Color="Thistle" />
+                     Color="MediumOrchid" />
     <SolidColorBrush x:Key="PageForegroundBrush"
                      Color="Silver" />
 </ResourceDictionary>

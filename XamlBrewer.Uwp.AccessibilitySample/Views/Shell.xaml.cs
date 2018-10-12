@@ -67,7 +67,7 @@ namespace XamlBrewer.Uwp.AccessibilitySample
         {
             if (e.Cumulative.Translation.X > 50)
             {
-                MySplitView.IsPaneOpen = true;
+                ShellSplitView.IsPaneOpen = true;
             }
         }
 
@@ -76,14 +76,14 @@ namespace XamlBrewer.Uwp.AccessibilitySample
         {
             if (e.Cumulative.Translation.X < -50)
             {
-                MySplitView.IsPaneOpen = false;
+                ShellSplitView.IsPaneOpen = false;
             }
         }
 
         // Open or close the splitview panel through Hamburger button.
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
-            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+            ShellSplitView.IsPaneOpen = !ShellSplitView.IsPaneOpen;
         }
 
         private void SplitViewFrame_OnNavigated(object sender, NavigationEventArgs e)

@@ -6,7 +6,7 @@
       mc:Ignorable="d"
       Foreground="{StaticResource PageForegroundBrush}">
 
-    <Grid Background="{StaticResource PageBackgroundBrush}"
+    <Grid Background="Transparent"
           Padding="48 34 0 0">
         <Grid.RowDefinitions>
             <RowDefinition Height="74" />
