@@ -8,9 +8,7 @@ using Windows.Foundation;
 using Windows.System;
 using Windows.UI.Composition;
 using Windows.UI.Core;
-using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Automation.Peers;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
@@ -447,28 +445,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         protected override void OnApplyTemplate()
         {
             PointerReleased += RadialGauge_PointerReleased;
-
-            // Remember user defined colors.
-            if (ThemeAccentBrush is SolidColorBrush highlightBrush)
-            {
-                _needleBrush = NeedleBrush.Color == highlightBrush.Color ? null : NeedleBrush;
-                _trailBrush = (TrailBrush as SolidColorBrush).Color == highlightBrush.Color ? null : TrailBrush;
-            }
-
-            if (ThemeBackgroundBrush is SolidColorBrush backgroundBrush)
-            {
-                _scaleBrush = (ScaleBrush as SolidColorBrush).Color == backgroundBrush.Color ? null : ScaleBrush;
-                _scaleTickBrush = ScaleTickBrush.Color == backgroundBrush.Color ? null : ScaleTickBrush;
-            }
-
-            if (ThemeForegroundBrush is SolidColorBrush foregroundBrush)
-            {
-                _tickBrush = TickBrush.Color == foregroundBrush.Color ? null : TickBrush;
-                _foreground = (Foreground as SolidColorBrush).Color == foregroundBrush.Color ? null : Foreground;
-            }
-
-            // Apply color scheme.
-            OnColorsChanged();
+            InitializeHighContrast();
 
             base.OnApplyTemplate();
         }

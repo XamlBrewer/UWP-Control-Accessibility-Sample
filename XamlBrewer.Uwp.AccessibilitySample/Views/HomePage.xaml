@@ -94,7 +94,8 @@
         </Viewbox>
 
         <!-- Main Beef -->
-        <Grid VerticalAlignment="Top" Grid.Row="2">
+        <Grid VerticalAlignment="Top"
+              Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -116,7 +117,12 @@
                                   Maximum="1000"
                                   TickSpacing="100"
                                   Grid.Column="2"
-                                  Margin="20" />
+                                  Margin="20">
+                <!--<controls:RadialGauge.Resources>
+                    <SolidColorBrush x:Key="RadialGaugeNeedleBrush"
+                                     Color="HotPink" />
+                </controls:RadialGauge.Resources>-->
+            </controls:RadialGauge>
         </Grid>
 
     </Grid>
