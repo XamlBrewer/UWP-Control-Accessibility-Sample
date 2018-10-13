@@ -126,23 +126,38 @@
             </SplitView.Content>
         </SplitView>
 
+        <!-- Title Bar -->
+        <Grid x:Name="AppTitleBar"
+              Background="Transparent"
+              Height="32"
+              VerticalAlignment="Top"
+              HorizontalAlignment="Stretch">
+            <TextBlock x:Name="AppTitle"
+                       xmlns:appmodel="using:Windows.ApplicationModel"
+                       Text="{x:Bind appmodel:Package.Current.DisplayName}"
+                       Style="{StaticResource CaptionTextBlockStyle}"
+                       IsHitTestVisible="False"
+                       Margin="48 8 0 0" />
+        </Grid>        
+        
         <!-- Hamburger Button -->
         <Button x:Name="HamburgerButton"
-                Margin="0 34 0 0"
+                Margin="0"
                 Width="48"
-                Height="48"
+                Height="32"
                 Background="Transparent"
                 Foreground="{StaticResource HamburgerForegroundBrush}"
                 VerticalAlignment="Top"
+                HorizontalAlignment="Left"
                 BorderThickness="0"
                 Click="HamburgerButton_Click"
                 FontFamily="Segoe UI">
             <Path Data="{StaticResource HamburgerIcon}"
                   Fill="{StaticResource HamburgerForegroundBrush}"
-                  VerticalAlignment="Top"
+                  VerticalAlignment="Center"
                   HorizontalAlignment="Center"
-                  Height="24"
-                  Width="24"
+                  Height="12"
+                  Width="12"
                   Stretch="Uniform" />
         </Button>
 

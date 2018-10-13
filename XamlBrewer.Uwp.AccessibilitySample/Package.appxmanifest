@@ -3,7 +3,7 @@
   <Identity Name="e30159c6-9884-49da-89c4-68cf5a256a0c" Publisher="CN=Diederik" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="e30159c6-9884-49da-89c4-68cf5a256a0c" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>XamlBrewer.Uwp.AccessibilitySample</DisplayName>
+    <DisplayName>XAML Brewer UWP Control Accessibility Sample</DisplayName>
     <PublisherDisplayName>Diederik</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>

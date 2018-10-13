@@ -7,7 +7,7 @@
     <!-- Theme Resources -->
 
     <!-- Default Accent Color -->
-    <Color x:Key="DefaultAccentColor">#FFC56B6B</Color>
+    <Color x:Key="DefaultAccentColor">MediumOrchid</Color>
 
     <!-- General Purpose -->
     <SolidColorBrush x:Key="TenPercentDarkerBrush"
@@ -17,40 +17,31 @@
                      Color="White"
                      Opacity=".1" />
     <SolidColorBrush x:Key="HighlightBrush"
-                     Color="#FFC56B6B" />
+                     Color="Orchid" />
 
     <!-- Header -->
-    <SolidColorBrush x:Key="TitlebarBackgroundBrush"
-                     Color="Transparent" />
-    <SolidColorBrush x:Key="TitlebarBackgroundDarkBrush"
-                     Color="Silver" />
-    <SolidColorBrush x:Key="TitlebarBackgroundLightBrush"
-                     Color="Silver" />
-    <SolidColorBrush x:Key="TitlebarForegroundBrush"
-                     Color="White" />
-    <SolidColorBrush x:Key="StatusbarBackgroundBrush"
-                     Color="#FF77878b" />
+    <Color x:Key="TitlebarButtonForegroundColor">Orchid</Color>
+    <SolidColorBrush x:Key="HamburgerForegroundBrush"
+                     Color="Orchid" />
 
     <!-- Splitview Pane -->
     <AcrylicBrush x:Key="SplitViewInlineBackgroundBrush"
                   BackgroundSource="HostBackdrop"
                   TintOpacity="0.6"
-                  FallbackColor="DarkSlateGray" />
+                  FallbackColor="Silver" />
     <AcrylicBrush x:Key="SplitViewOverlayBackgroundBrush"
                   BackgroundSource="Backdrop"
                   TintOpacity="0.6"
-                  FallbackColor="DarkSlateGray" />
+                  FallbackColor="Silver" />
     <SolidColorBrush x:Key="SplitViewForegroundBrush"
                      Color="Indigo" />
-    <SolidColorBrush x:Key="HamburgerForegroundBrush"
-                     Color="Coral" />
 
     <!-- Splitview Content -->
     <Color x:Key="PageBackgroundColor">DimGray</Color>
     <SolidColorBrush x:Key="PageBackgroundBrush"
                      Color="DimGray" />
     <SolidColorBrush x:Key="PageTitleBrush"
-                     Color="MediumOrchid" />
+                     Color="Orchid" />
     <SolidColorBrush x:Key="PageForegroundBrush"
                      Color="Silver" />
 </ResourceDictionary>

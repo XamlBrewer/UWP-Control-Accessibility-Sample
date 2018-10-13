@@ -108,7 +108,8 @@
                                   Margin="20" />
             <controls:RadialGauge Unit="Mississippi"
                                   Value="20"
-                                  NeedleBrush="Coral"
+                                  NeedleBrush="MediumOrchid"
+                                  TrailBrush="Indigo"
                                   Grid.Column="1"
                                   Margin="20" />
             <controls:RadialGauge Unit="Miles"

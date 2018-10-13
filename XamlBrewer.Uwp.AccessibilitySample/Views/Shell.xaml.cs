@@ -7,6 +7,8 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
 using Mvvm.Services;
+using Windows.UI.ViewManagement;
+using Windows.ApplicationModel.Core;
 
 namespace XamlBrewer.Uwp.AccessibilitySample
 {
@@ -14,10 +16,35 @@ namespace XamlBrewer.Uwp.AccessibilitySample
     {
         public Shell()
         {
-            InitializeComponent();
+            // Blends the app into the title bar.
+            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+            coreTitleBar.ExtendViewIntoTitleBar = true;
+
+            this.InitializeComponent();
+
+            // Update the title bar when the back button (dis)appears or resizes.
+            Window.Current.CoreWindow.SizeChanged += (s, e) => UpdateAppTitle();
+            coreTitleBar.LayoutMetricsChanged += (s, e) => UpdateAppTitle();
+
+            // Show the system back button.
+            // EnableBackButton();
+
+            Window.Current.SetTitleBar(AppTitleBar);
+
 
             // Initialize Navigation Service.
             Navigation.Frame = SplitViewFrame;
+        }
+
+        /// <summary>
+        /// Updates the title bar when the back button (dis)appears or resizes.
+        /// </summary>
+        private void UpdateAppTitle()
+        {
+            var full = (ApplicationView.GetForCurrentView().IsFullScreenMode);
+            var left = (full ? 0 : CoreApplication.GetCurrentView().TitleBar.SystemOverlayLeftInset);
+            HamburgerButton.Margin = new Thickness(left, 0, 0, 0);
+            AppTitle.Margin = new Thickness(left + HamburgerButton.Width + 12, 8, 0, 0);
         }
 
         // Navigate to another page.
