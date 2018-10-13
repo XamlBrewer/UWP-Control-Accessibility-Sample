@@ -11,6 +11,10 @@ namespace Mvvm.Services
     {
         private static Dictionary<Type, Color> AccentColors = new Dictionary<Type, Color>();
 
+        private static Color DefaultAccentColor => (Color)Application.Current.Resources["DefaultAccentColor"];
+
+        private static Color TitleBarButtonForegroundColor => (Color)Application.Current.Resources["TitlebarButtonForegroundColor"];
+
         // Call this in App OnLaunched.
         // Requires reference to Windows Mobile Extensions for the UWP.
         /// <summary>
@@ -19,7 +23,7 @@ namespace Mvvm.Services
         public static void ApplyToContainer()
         {
             // Custom accent color.
-            ApplyAccentColor((Color)Application.Current.Resources["DefaultAccentColor"]);
+            ApplyAccentColor(DefaultAccentColor);
 
             // Title bar - if present.
             if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.ApplicationView"))
@@ -29,7 +33,9 @@ namespace Mvvm.Services
                 {
                     titleBar.ButtonBackgroundColor = Colors.Transparent;
                     titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
-                    titleBar.ButtonForegroundColor = (Color)Application.Current.Resources["TitlebarButtonForegroundColor"];
+                    titleBar.ButtonForegroundColor = TitleBarButtonForegroundColor;
+                    titleBar.ButtonHoverBackgroundColor = TitleBarButtonForegroundColor;
+                    titleBar.ButtonPressedBackgroundColor = TitleBarButtonForegroundColor;
                 }
             }
         }
