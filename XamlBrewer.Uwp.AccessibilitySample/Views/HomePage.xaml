@@ -69,7 +69,8 @@
                                   TrailBrush="Indigo"
                                   Grid.Column="1"
                                   Margin="20" />
-            <controls:RadialGauge Unit="Miles"
+            <controls:RadialGauge AutomationProperties.Name="The gauge on the right"
+                                  Unit="Miles"
                                   Value="200"
                                   Minimum="100"
                                   Maximum="1000"

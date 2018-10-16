@@ -42,6 +42,16 @@
             <LineBreak />
             <Run>* High Contrast themes support.</Run>
             <LineBreak />
+            <LineBreak />
+            <LineBreak />
+            <Run>Background image designed by </Run>
+            <Hyperlink NavigateUri="http://www.freepik.com">Yurlick / Freepik</Hyperlink>
+            <Run>.</Run>
+            <LineBreak />
+            <LineBreak />
+            <Run>Radial Gauge source from </Run>
+            <Hyperlink NavigateUri="https://github.com/windows-toolkit/WindowsCommunityToolkit">Windows Community Toolkit</Hyperlink>
+            <Run>.</Run>            
         </TextBlock>
     </Grid>
 </Page>
