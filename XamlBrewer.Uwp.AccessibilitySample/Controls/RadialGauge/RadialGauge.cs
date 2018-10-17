@@ -189,7 +189,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         {
             DefaultStyleKey = typeof(RadialGauge);
 
-            KeyDown += RadialGauge_KeyDown;
+            Unloaded += RadialGauge_Unloaded;
         }
 
         private void RadialGauge_KeyDown(object sender, KeyRoutedEventArgs e)
@@ -441,6 +441,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         protected override void OnApplyTemplate()
         {
+            // Register event handlers.
+            KeyDown += RadialGauge_KeyDown;
             ThemeListener.HighContrastChanged += ThemeListener_HighContrastChanged;
             PointerReleased += RadialGauge_PointerReleased;
             InitializeHighContrast();
@@ -659,6 +661,14 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             {
                 e.Handled = true;
             }
+        }
+
+        private void RadialGauge_Unloaded(object sender, RoutedEventArgs e)
+        {
+            // Unregister event handlers.
+            KeyDown -= RadialGauge_KeyDown;
+            ThemeListener.HighContrastChanged -= ThemeListener_HighContrastChanged;
+            PointerReleased -= RadialGauge_PointerReleased;
         }
 
         private void UpdateNormalizedAngles()
