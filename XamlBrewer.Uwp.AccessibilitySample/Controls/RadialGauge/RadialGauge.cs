@@ -189,9 +189,6 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         {
             DefaultStyleKey = typeof(RadialGauge);
 
-            ThemeListener.HighContrastChanged -= ThemeListener_HighContrastChanged;
-            ThemeListener.HighContrastChanged += ThemeListener_HighContrastChanged;
-
             KeyDown += RadialGauge_KeyDown;
         }
 
@@ -444,6 +441,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         protected override void OnApplyTemplate()
         {
+            ThemeListener.HighContrastChanged += ThemeListener_HighContrastChanged;
             PointerReleased += RadialGauge_PointerReleased;
             InitializeHighContrast();
 
