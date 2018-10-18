@@ -669,6 +669,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             KeyDown -= RadialGauge_KeyDown;
             ThemeListener.HighContrastChanged -= ThemeListener_HighContrastChanged;
             PointerReleased -= RadialGauge_PointerReleased;
+            Unloaded -= RadialGauge_Unloaded;
         }
 
         private void UpdateNormalizedAngles()
